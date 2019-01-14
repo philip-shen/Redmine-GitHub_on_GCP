@@ -9,8 +9,25 @@ The interactions between the different parts of the process is outlined in the f
 Major parts rfer from [Redmine GitHub Hook](https://github.com/koppen/redmine_github_hook)
 
 * Step 1
-Install the plugin
+Install the Redmine plugins
 
+```
+cd /path/to/redmine/plugins
+git clone https://github.com/koppen/redmine_github_hook.git
+```
+
+```
+cd /path/to/redmine/tmp
+touch restart.txt
+```
+
+```
+ sudo /etc/init.d/apache2 restart
+```
+
+Check Redmine Plugins installation or not.
+Home--→Administration--→Plugins
+![alt tag](https://i.imgur.com/rPQXfXb.jpg)
 
 * Step 2
 Add the repository to Redmine
@@ -18,8 +35,39 @@ Add the repository to Redmine
 (note, this should work whether you want to use Redmine GitHub Hook or not) !!!cliché!!!
 ```
 
+Login GitHub without password with Deploy keys setting
+
+```
+ssh-keygen -t rsa -C amyfanpti@gmail.com
+```
+![alt tag](https://i.imgur.com/nv6zwnJ.jpg)
+
+repositories on GitHub--→Settings--→Deploy key--→Add deploy key
+![alt tag](https://i.imgur.com/h1BMYp1.jpg)
+
+```
+$ git clone https://github.com/philip-shen/Redmine-GitHub_on_GCP.git
+$ git pull
+Already up-to-date.
+```
+
+git clone repositor
+```
+cd /path/to/redmine/repositories
+git clone --bare git@github.com:username/repository.git
+```
+
+Setting Git on Redmine
+![alt tag](https://i.imgur.com/zXP5Fh5.jpg)
+
+Check Repository on Redmine
+![alt tag](https://i.imgur.com/oafcMfg.jpg)
+
 * Step 3
 Connecting GitHub to Redmine
+
+Webhook on GitHub Configuration
+
 
 * Step 4 
 
